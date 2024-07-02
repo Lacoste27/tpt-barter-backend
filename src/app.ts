@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import { AuthRoutes } from "./routes/auth.routes";
 import { CategoryRoutes } from "./routes/category.routes";
 import { ChatRoutes } from "./routes/chat.routes";
-import { NotificationRoutes } from "./routes/notiification.routes";
+import { NotificationRoutes } from "./routes/notification.routes";
 import { ObjectRoutes } from "./routes/object.routes";
 import { UserRoutes } from "./routes/user.routes";
 import { ReportRoutes } from "./routes/report.routes";
