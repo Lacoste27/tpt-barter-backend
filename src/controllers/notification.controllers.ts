@@ -8,16 +8,18 @@ export const getNotificationsHandler = async (req: Request, res: Response) => {
       message: "Notifications get is working",
     });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
 
 export const addNotificationHandler = async (req: Request, res: Response) => {
   try {
-    const { userId, message } = req.body;
-    const notification = await notificationService.addNotification(userId, message);
+    const { userId, subject, message } = req.body;
+    const notification = await notificationService.addNotification(userId, message, subject);
     res.status(201).json(notification);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -28,6 +30,7 @@ export const getUserNotificationsHandler = async (req: Request, res: Response) =
     const notifications = await notificationService.getUserNotifications(parseInt(userId));
     res.status(200).json(notifications);
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -42,6 +45,7 @@ export const markNotificationAsReadHandler = async (req: Request, res: Response)
       res.status(404).json({ message: "Notification not found" });
     }
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
@@ -56,6 +60,7 @@ export const getNotificationByIdHandler = async (req: Request, res: Response) =>
       res.status(404).json({ message: "Notification not found" });
     }
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: error });
   }
 };
